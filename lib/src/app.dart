@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_and_navigation/src/features/home/home_page.dart';
+import 'package:material_design_and_navigation/src/features/home/presentation/home_page.dart';
 
-import 'features/insanelubutton/insanely_button_page.dart' show InsanelyButtonPage;
+import 'features/impopar/impopar_page.dart';
+import 'features/insanelubutton/insanely_button_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -17,7 +18,8 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/insanely' : (context) => InsanelyButtonPage(),
+        '/insanely': (context) => InsanelyButtonPage(),
+        '/impopar': (context) => ImpoParPage(),
       },
     );
   }

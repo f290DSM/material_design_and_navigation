@@ -18,6 +18,12 @@ class HomePage extends StatelessWidget {
               },
               child: Text('Insanely Button'),
             ),
+            FilledButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/impopar');
+              },
+              child: Text('ImpoPar Button'),
+            ),
           ],
         ),
       ),
