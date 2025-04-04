@@ -12,7 +12,7 @@ class App extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.red,
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
         ),
       ),
       initialRoute: '/',

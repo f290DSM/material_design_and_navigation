@@ -12,21 +12,25 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FilledButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/insanely');
-              },
-              child: Text('Insanely Button'),
-            ),
-            FilledButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/impopar');
-              },
-              child: Text('ImpoPar Button'),
-            ),
+            _CustomButton(label: 'Insanely Button', route: '/insanely'),
+            _CustomButton(label: 'ImpoPar Button', route: '/impopar'),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _CustomButton extends StatelessWidget {
+  final String label;
+  final String route;
+  const _CustomButton({required this.label, required this.route});
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () => Navigator.pushNamed(context, route),
+      child: Text(label),
     );
   }
 }
