@@ -12,7 +12,28 @@ class RowsAndColumns extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: [AspectRatio(aspectRatio: 5 / 3, child: Column())],
+        children: [
+          AspectRatio(
+            aspectRatio: 5 / 3,
+            child: Column(children: [
+              Expanded(
+                child: Container(
+                  color: Colors.red,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.white,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.blue,
+                ),
+              ),
+            ],)
+          ),
+        ],
       ),
     );
   }
