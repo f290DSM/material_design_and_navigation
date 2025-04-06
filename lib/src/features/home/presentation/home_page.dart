@@ -15,6 +15,8 @@ class HomePage extends StatelessWidget {
             _CustomButton(label: 'Insanely Button', route: '/insanely'),
             _CustomButton(label: 'ImpoPar Button', route: '/impopar'),
             _CustomButton(label: 'Fun With Flags', route: '/rowscolumns'),
+            _CustomButton(label: 'Bottom Navigation', route: '/bottom-navigation'),
+            _CustomButton(label: 'Tab Navigation', route: '/tab-navigation'),
           ],
         ),
       ),

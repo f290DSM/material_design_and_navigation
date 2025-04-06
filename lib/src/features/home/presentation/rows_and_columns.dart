@@ -4,9 +4,7 @@ class RowsAndColumns extends StatelessWidget {
   const RowsAndColumns({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    //TODO: 3 bandeiras com listras ou faixas
-
+  Widget build(BuildContext context) {    
     return Scaffold(
       appBar: AppBar(title: Text('Fun With Flags')),
       body: ListView(
@@ -29,13 +27,13 @@ class Chile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Chile',
       child: Column(
         children: [
-          Expanded(
+          Flexible(
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
                   child: Container(
                     constraints: BoxConstraints.expand(),
                     color: Colors.blue,
@@ -59,6 +57,7 @@ class BurkinaFaso extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Burkina Faso',
       child: Stack(
         alignment: Alignment(0, 0),
         children: [
@@ -81,6 +80,7 @@ class Italia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Italia',
       child: Row(
         children: [
           Expanded(child: Container(color: Colors.red)),
@@ -98,6 +98,7 @@ class Colombia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Colombia',
       child: Column(
         children: [
           Expanded(flex: 2, child: Container(color: Colors.yellow)),
@@ -115,6 +116,7 @@ class Denmark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Denmark',
       child: Stack(
         alignment: Alignment(0, 0),
         children: [
@@ -141,10 +143,11 @@ class Brasil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bandeira(
+      pais: 'Brasil',
       child: Stack(
         alignment: Alignment(0, 0),
         children: [
-          Expanded(child: Container(color: Colors.green)),
+          SizedBox.expand(child: Container(color: Colors.green)),
           Transform.rotate(
             angle: 45 * 3.1416 / 180,
             child: Container(width: 150, height: 150, color: Colors.yellow),
@@ -167,15 +170,19 @@ class Brasil extends StatelessWidget {
 }
 
 class Bandeira extends StatelessWidget {
-  const Bandeira({super.key, required this.child});
+  const Bandeira({super.key, required this.child, required this.pais});
 
   final Widget child;
+  final String pais;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: AspectRatio(aspectRatio: 5 / 3, child: child),
+    return Tooltip(
+      message: pais,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: AspectRatio(aspectRatio: 5 / 3, child: child),
+      ),
     );
   }
 }
