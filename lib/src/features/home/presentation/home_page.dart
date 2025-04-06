@@ -8,9 +8,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('AppBar')),
       drawer: Drawer(),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _CustomButton(label: 'Insanely Button', route: '/insanely'),
             _CustomButton(label: 'ImpoPar Button', route: '/impopar'),
@@ -33,7 +35,7 @@ class _CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () => Navigator.pushNamed(context, route),
-      child: Text(label),
+      child: Text(label.toUpperCase()),
     );
   }
 }
